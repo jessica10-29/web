@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Soha - Asistente</title>
+    <link rel="stylesheet" href="style.css">
+    
+  
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">Asistente Soha 🤖</div>
+
+    <!-- AVATAR -->
+    <div class="avatar-box">
+        <img src="images.jpg" class="avatar">
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+
+        <!-- LEFT PANEL -->
+        <div class="left-panel">
+            <button onclick="cambiarTema()">Cambiar tema</button>
+            <button onclick="limpiarChat()">Limpiar historial</button>
+            <button onclick="activarvoz()">Activar voz</button>
+
+            <label style="margin-top:10px;font-size:13px;">Historial:</label>
+            <div class="historial" id="historial"></div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+
+            <!-- Chat box -->
+            <div id="chat-box"></div>
+
+            <!-- Input y botones -->
+            <div class="bottom">
+                <input id="msg" type="text" placeholder="Escribe aquí..." onkeypress="if(event.key==='Enter'){ enviar(); }">
+                <button onclick="escuchar()">🎙️</button>
+                <button onclick="enviar()">Enviar</button>
+                <button onclick="audioControl('play')">🔁</button>
+                <button onclick="audioControl('pause')">⏸</button>
+                <button onclick="audioControl('resume')">▶</button>
+                <button onclick="audioControl('stop')">⏹</button>
+            </div>
+
+            <!-- Estado -->
+            <div class="status" id="status"></div>
+
+        </div>
+    </div>
+
+    <!-- JS externo -->
+    <script src="script.js"></script>
+
+</body>
+</html>

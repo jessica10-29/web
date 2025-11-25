@@ -1,0 +1,232 @@
+/* ===== Estilos generales ===== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #9fcfc7;
+    color: #000000;
+}
+
+/* ===== Header ===== */
+.header {
+    background-color: #007464;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    
+    
+}
+
+/* ===== Avatar ===== */
+.avatar-box {
+    text-align: center;
+    margin: 5px 0;
+    width: 10px;
+    font-size: 22px; 
+    height: 230px;
+    margin-left: 0px;
+    
+}
+
+.avatar {
+    width: 220px;
+    padding: 5%;
+    height: 220px;
+    border-radius: 05%;
+    object-fit: cover;
+    margin-left: 20px
+     
+    
+}
+
+/* ===== Contenedor principal ===== */
+.container {
+    display: flex;
+    width: 90%;
+    height: calc(70vh - 70px);
+
+}
+/* Estilo para el contenedor del historial (para posicionar el menú) */
+.historial .item {
+    position: relative; /* Clave para que el menú se posicione dentro */
+    padding-right: 35px; /* Espacio extra a la derecha para el menú */
+}
+
+/* Estilo para el botón de tres puntos */
+.opciones-btn {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 10px; /* Para centrar los puntos */
+    color: #555;
+    user-select: none; /* Evita que el texto sea seleccionado */
+}
+
+/* Estilo para el menú desplegable */
+.menu-opciones {
+    position: absolute;
+    top: 100%; /* Aparece justo debajo del mensaje */
+    right: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    display: none; /* Inicialmente oculto */
+    min-width: 120px;
+}
+
+.menu-opciones.visible {
+    display: block; /* Se muestra al hacer clic */
+}
+
+.menu-opciones button {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.menu-opciones button:hover {
+    background-color: #f0f0f0;
+}
+
+/* ===== Panel izquierdo ===== */
+.left-panel {
+    width: 30%;
+    width: 200px;
+    background: #acafaf;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.left-panel button {
+    padding: 4px;
+
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.historial {
+    background: #fff;
+    border: 1px solid #ccc;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px; /* <--- Aumenta el espacio interior para el contenido */
+    /* Asegúrate de que el resto de las propiedades estén ahí */
+}
+
+.historial .item {
+    margin-bottom: 8px; /* <--- Añade espacio entre cada elemento del historial */
+    font-size: 14px;
+    padding: 3px 5px; /* Pequeño espacio dentro del texto */
+    border-bottom: 1px dotted #e0e0e0; /* Opcional: Línea sutil para separar */
+    cursor: pointer; /* Opcional: Indica que se puede hacer clic */
+}
+
+.historial .item:last-child {
+    border-bottom: none; /* Remueve la línea del último elemento */
+    font-weight: bold; /* Opcional: Resalta el último mensaje */
+}
+
+/* ===== Panel derecho ===== */
+.right-panel {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background: #184242;
+    overflow-y: auto;
+}
+
+/* ===== Chat box ===== */
+#chat-box {
+    flex-grow: 2;
+    background: #e9eaeb;
+    border: 2px solid #2c2c2c;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/* ===== Burbujas ===== */
+.bubble-user {
+    background: #006d5b;
+    color: rgb(255, 255, 255);
+    padding: 8px 12px;
+    border-radius: 20px 20px 0 20px;
+    margin: 5px 0;
+    max-width: 70%;
+}
+
+.bubble-soha {
+    background: #777777;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 20px 20px 20px 0;
+    margin: 5px 0;
+    max-width: 70%;
+}
+
+/* ===== Input y botones ===== */
+.bottom {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.bottom input[type="text"] {
+    flex-grow: 1;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.bottom button {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ===== Estado ===== */
+.status {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #e6e6e6;
+}
+
+/* ===== Tema oscuro ===== */
+body.dark {
+    background: #000000;
+    color: #f0f0f0;
+}
+
+body.dark .left-panel {
+    background: #2c2c2c;
+}
+
+body.dark #chat-box {
+    background: #d3d3d3;
+    color: #686767;
+}
+
+body.dark .bubble-user {
+    background: #1a1b1b;
+}
+
+body.dark .bubble-soha {
+    background: #302f2f;
+}
+/* ===glas para burbujas oscuras ... */
